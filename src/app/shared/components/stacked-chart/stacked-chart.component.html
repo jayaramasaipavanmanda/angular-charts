@@ -1,0 +1,20 @@
+<app-shared-header
+  [title]="title"
+  (chartType)="toggleChartType($event)"
+  (changeFilterType)="changeFilter($event)"
+></app-shared-header>
+<div class="chart-container">
+  <canvas
+    height="200"
+    width="10"
+    baseChart
+    [datasets]="chartData"
+    [labels]="labels"
+    [options]="chartOptions"
+    [plugins]="barChartPlugins"
+    [legend]="barChartLegend"
+    [chartType]="barChartType"
+    [colors]="colors"
+  >
+  </canvas>
+</div>
