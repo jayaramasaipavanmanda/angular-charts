@@ -1,8 +1,10 @@
 import {
   Component,
+  EventEmitter,
   Input,
   OnChanges,
   OnInit,
+  Output,
   SimpleChanges,
 } from "@angular/core";
 import { ChartOptions, ChartType, ChartDataSets } from "chart.js";
@@ -13,27 +15,30 @@ import { Label } from "ng2-charts";
   templateUrl: "./stacked-chart.component.html",
   styleUrls: ["./stacked-chart.component.css"],
 })
-export class StackedChartComponent implements OnInit {
-  // @Input() chartOptions: ChartOptions;
+export class StackedChartComponent {
   @Input() colors: any[];
   @Input() labels: string[];
   @Input() chartData: ChartDataSets[];
   @Input() title: string;
   @Input() chartOptions?: ChartOptions;
+  @Input() selectedValue?: string;
+  @Output() filterType = new EventEmitter<string>();
 
   public barChartType: ChartType = "bar";
   public barChartLegend = true;
   public barChartPlugins = [];
 
   public changeFilter(value: string) {
-    console.log(value);
+    this.filterType.emit(value);
   }
 
   public toggleChartType(value: ChartType) {
     this.barChartType = value;
   }
 
+  public options = [
+    { value: "week to date", label: "Week to date" },
+    { value: "weekly", label: "Weekly" },
+  ];
   constructor() {}
-
-  ngOnInit() {}
 }

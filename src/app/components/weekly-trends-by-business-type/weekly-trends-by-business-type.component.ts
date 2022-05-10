@@ -9,13 +9,14 @@ import * as moment from "moment";
   styleUrls: ["./weekly-trends-by-business-type.component.css"],
 })
 export class WeeklyTrendsByBusinessTypeComponent implements OnInit {
-  public title = "Weekly trends";
+  public title = "Weekly trends by Business Type";
   public chartColors: any[] = [
     { backgroundColor: "#739198" },
     { backgroundColor: "#FFD2A8" },
     { backgroundColor: "#78616E" },
   ];
   public barChartLabels: Label[] = [];
+  public filterType = "week to date";
 
   ngOnInit(): void {
     for (let i = 0; i < 7; i++) {
@@ -28,16 +29,25 @@ export class WeeklyTrendsByBusinessTypeComponent implements OnInit {
   }
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 56, 55, 40], label: "Property", stack: "a" },
+    {
+      data: [65, 59, 80, 81, 56, 55, 40],
+      label: "Property",
+      stack: "a",
+      hoverBackgroundColor: ["transparent"],
+    },
     {
       data: [28, 48, 40, 19, 86, 27, 90],
       stack: "a",
       yAxisID: "y-axis-1",
+      hoverBackgroundColor: ["transparent"],
+      label: "Interior Designer",
     },
     {
       data: [38, 28, 30, 49, 82, 67, 92],
       stack: "a",
       yAxisID: "y-axis-2",
+      hoverBackgroundColor: ["transparent"],
+      label: "Brand/Retailer",
     },
   ];
 

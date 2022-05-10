@@ -20,7 +20,7 @@ export class BusinessTypeComponent {
     "Interior Designer",
     "Brand/Retailer",
   ];
-
+  public filterType = "week to date";
   public barChartData: ChartDataSets[] = [
     { data: [65, 59, 80, 81, 56, 55, 40], label: "Property", stack: "a" },
     {

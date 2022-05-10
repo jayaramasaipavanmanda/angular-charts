@@ -1,3 +1,28 @@
 .chart-container {
   margin: 2rem;
 }
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.options-container {
+  display: flex;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  height: fit-content;
+  margin-left: 1rem;
+}
+
+.chart-type-icons {
+  margin-left: 2rem;
+}
+
+.title {
+  padding-left: 2rem;
+}

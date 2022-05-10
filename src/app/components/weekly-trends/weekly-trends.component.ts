@@ -16,6 +16,7 @@ export class WeeklyTrendsComponent implements OnInit {
     { backgroundColor: "#C4C4C4" },
   ];
   public barChartLabels: Label[] = [];
+  public filterType = "week to date";
 
   ngOnInit(): void {
     for (let i = 0; i < 7; i++) {

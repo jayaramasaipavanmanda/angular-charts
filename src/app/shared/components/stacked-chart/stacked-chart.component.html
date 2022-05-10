@@ -1,8 +1,22 @@
-<app-shared-header
-  [title]="title"
-  (chartType)="toggleChartType($event)"
-  (changeFilterType)="changeFilter($event)"
-></app-shared-header>
+<div class="header">
+  <p class="title">{{ title }}</p>
+  <div class="options-container">
+    <app-shared-select
+      [options]="options"
+      [title]="title"
+      [selectedValue]="selectedValue"
+      (setSelectedValue)="changeFilter($event)"
+    ></app-shared-select>
+    <div class="chart-type-icons">
+      <button mat-raised-button (click)="toggleChartType('bar')">
+        <mat-icon> insert_chart_outlined</mat-icon>
+      </button>
+      <button mat-raised-button (click)="toggleChartType('line')">
+        <mat-icon> show_chart_outlined</mat-icon>
+      </button>
+    </div>
+  </div>
+</div>
 <div class="chart-container">
   <canvas
     height="200"

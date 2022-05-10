@@ -10,20 +10,15 @@ interface IOption {
   templateUrl: "./select.component.html",
   styleUrls: ["./select.component.css"],
 })
-export class SelectComponent implements OnInit {
+export class SelectComponent {
   @Input() options: IOption[] = [];
   @Input() title: string = "";
-  @Input() defaultValue: string = "";
+  @Input() selectedValue: string;
   @Output() setSelectedValue = new EventEmitter<string>();
 
-  public selectedValue: string = "week to date";
-
-  public selectOption(value: string) {
-    this.setSelectedValue.emit(value);
-    this.selectedValue = value;
+  public selectOption() {
+    this.setSelectedValue.emit(this.selectedValue);
   }
 
   constructor() {}
-
-  ngOnInit() {}
 }
