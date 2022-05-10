@@ -10,6 +10,8 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { WeeklyTrendsComponent } from "./components/weekly-trends/weekly-trends.component";
 import { BusinessTypeComponent } from "./components/business-type/business-type.component";
 import { WeeklyTrendsByBusinessTypeComponent } from "./components/weekly-trends-by-business-type/weekly-trends-by-business-type.component";
+import { TotalLeadsBySourceComponent } from './components/total-leads-by-source/total-leads-by-source.component';
+import { TrendsByPropertyTypeComponent } from './components/trends-by-property-type/trends-by-property-type.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { WeeklyTrendsByBusinessTypeComponent } from "./components/weekly-trends-
     WeeklyTrendsComponent,
     BusinessTypeComponent,
     WeeklyTrendsByBusinessTypeComponent,
+    TotalLeadsBySourceComponent,
+    TrendsByPropertyTypeComponent,
   ],
   imports: [
     BrowserModule,
