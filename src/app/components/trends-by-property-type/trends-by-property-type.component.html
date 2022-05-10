@@ -1,0 +1,20 @@
+<app-stacked-chart
+  *ngIf="filterType === 'week to date'"
+  [chartData]="weekToDataBarChartData"
+  [labels]="weekToDataBarChartLabels"
+  [colors]="weekToDateChartColors"
+  [chartOptions]="barChartOptions"
+  [title]="weekToDateTitle"
+  (filterType)="changeFilterType($event)"
+  [selectedValue]="filterType"
+></app-stacked-chart>
+<app-stacked-chart
+  *ngIf="filterType === 'weekly'"
+  [chartData]="weeklyDataBarChartData"
+  [labels]="weeklyBarChartLabels"
+  [colors]="weeklyChartColors"
+  [chartOptions]="barChartOptions"
+  [title]="weeklyTitle"
+  (filterType)="changeFilterType($event)"
+  [selectedValue]="filterType"
+></app-stacked-chart>
